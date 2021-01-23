@@ -1417,6 +1417,18 @@ BEGIN
     DECLARE     cnt_chn_        INT DEFAULT 0;
     DECLARE     cnt_shw_        INT DEFAULT 0;
     DECLARE     cnt_mov_        INT DEFAULT 0;
+    
+    SELECT  COUNT(id)
+    INTO    cnt_chn_
+    FROM    `channel`;
+
+    SELECT  COUNT(id)
+    INTO    cnt_shw_
+    FROM    `show`;
+
+    SELECT  COUNT(id)
+    INTO    cnt_mov_
+    FROM    `film`;
 
     IF ( _full = 1 ) THEN
         SELECT      COUNT(*)
